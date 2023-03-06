@@ -30,4 +30,7 @@ class Potluck
     potluck_menu[:desserts] = des.sort
     potluck_menu 
   end
+
+  def ratio
+  end
 end

@@ -48,4 +48,13 @@ RSpec.describe Potluck do
       :desserts=>["Candy Salad"]
       })
   end
+  it 'finds the ratio of dishes from categories' do
+    @potluck.add_dish(@bean_dip)
+    @potluck.add_dish(@couscous_salad)
+    @potluck.add_dish(@summer_pizza)
+    @potluck.add_dish(@roast_pork)
+    @potluck.add_dish(@cocktail_meatballs)
+    @potluck.add_dish(@candy_salad)
+    expect(@potluck.ratio).to eq(50.0)
+  end
 end
