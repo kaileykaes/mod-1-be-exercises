@@ -18,4 +18,12 @@ class Venue
       patron.upcase
     end
   end
+
+  def over_capacity?
+    if patrons.count > capacity
+      true
+    else
+      false
+    end
+  end
 end
