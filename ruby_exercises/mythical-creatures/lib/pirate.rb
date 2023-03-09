@@ -1,9 +1,23 @@
 class Pirate
   attr_reader :name, 
-              :job
+              :job, 
+              :heinous_act
   
   def initialize(name, job = 'Scallywag')
     @name = name
     @job = job
-  end  
+    @heinous_act = 0
+  end
+
+  def commit_heinous_act
+    @heinous_act += 1
+  end
+
+  def cursed?
+    if @heinous_act >= 3
+      true 
+    else
+      false
+    end
+  end
 end
