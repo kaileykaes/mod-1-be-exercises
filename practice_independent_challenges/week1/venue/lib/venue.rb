@@ -1,5 +1,7 @@
 class Venue
-  attr_reader :name, :capacity, :patrons
+  attr_reader :name, 
+              :capacity, 
+              :patrons
   
   def initialize(name, capacity)
     @name = name
@@ -8,12 +10,12 @@ class Venue
   end
 
   def add_patron(patron)
-    @patrons << patron
+    patrons << patron
   end
 
   def yell_at_patrons
-    @patrons.map do |patron|
-      patron.upcase 
+    patrons.map do |patron|
+      patron.upcase
     end
-  end 
+  end
 end
