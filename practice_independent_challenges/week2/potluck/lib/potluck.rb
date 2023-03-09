@@ -15,6 +15,7 @@ class Potluck
     @dishes.each do |dish|
       category_dishes << dish if dish.category == category 
     end
+    category_dishes
   end
 
   def menu 
@@ -31,6 +32,7 @@ class Potluck
     potluck_menu 
   end
 
-  def ratio
+  def ratio(category)
+    menu[category].count.to_f / dishes.count
   end
 end
