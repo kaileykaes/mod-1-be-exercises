@@ -26,4 +26,8 @@ class Venue
       false
     end
   end
+
+  def kick_out
+    patrons.shift until patrons.count == capacity
+  end
 end
