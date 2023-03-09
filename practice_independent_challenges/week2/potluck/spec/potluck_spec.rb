@@ -31,8 +31,8 @@ RSpec.describe Potluck do
     @potluck.add_dish(@cocktail_meatballs)
     @potluck.add_dish(@candy_salad)
     expect(@potluck.get_all_from_category(:appetizer)).to be_a(Array)
-    expect(@potluck.get_all_from_category(:appetizer).first).to eq(@couscous_salad)
-    expect(@potluck.get_all_from_category(:appetizer).first.name).to eq("Couscous Salad")
+    expect(@potluck.get_all_from_category(:appetizer)[0]).to eq(@couscous_salad)
+    expect(@potluck.get_all_from_category(:appetizer)[0].name).to eq("Couscous Salad")
   end
 
   it 'stores menu by category' do 
@@ -55,6 +55,7 @@ RSpec.describe Potluck do
     @potluck.add_dish(@roast_pork)
     @potluck.add_dish(@cocktail_meatballs)
     @potluck.add_dish(@candy_salad)
-    expect(@potluck.ratio).to eq(50.0)
+    require 'pry'; binding.pry
+    expect(@potluck.ratio(:appetizer)).to eq(50.0)
   end
 end
