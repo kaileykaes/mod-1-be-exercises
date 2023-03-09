@@ -22,4 +22,8 @@ class Pirate
       false
     end
   end
+
+  def rob_ship
+    @booty += 100
+  end
 end
