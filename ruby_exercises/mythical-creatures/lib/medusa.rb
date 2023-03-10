@@ -6,12 +6,11 @@ class Medusa
     @name = name
     @statues = []
   end  
-end
 
-class Person
-  attr_reader :name
-  
-  def initialize(name)
-    @name = name
+  def stare(victim)
+    @statues << victim && victim.stone = true
+    if @statues.count > 3
+      @statues.shift
+    end
   end
 end
