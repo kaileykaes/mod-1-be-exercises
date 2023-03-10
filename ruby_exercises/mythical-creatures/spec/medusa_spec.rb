@@ -47,6 +47,16 @@ RSpec.describe Medusa do
   end
 
   it 'if a fourth victim is stoned the first is unstoned' do
-    # your code here
+    medusa = Medusa.new('Cassiopeia')
+    victim = Person.new('Perseus')
+    victim2 = Person.new('Angela')
+    victim3 = Person.new('Spork')
+    victim4 = Person.new('Formula')
+    medusa.stare(victim)
+    medusa.stare(victim2)
+    medusa.stare(victim3)
+    expect(medusa.statues[0]).to eq(victim)
+    medusa.stare(victim4)
+    expect(medusa.statues[0]).to eq(victim2)
   end
 end
