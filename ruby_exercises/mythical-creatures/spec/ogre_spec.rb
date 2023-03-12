@@ -73,12 +73,11 @@ RSpec.describe Ogre do
     expect(human.notices_ogre?).to be true
   end
 
-  it 'hits the human every second time it swings' do
+  it 'hits the human every second time xit swings' do
     ogre = Ogre.new('Brak')
     human = Human.new
 
     6.times { ogre.encounter(human) }
-
     expect(ogre.encounter_counter).to eq(6)
     expect(ogre.swings).to eq(2)
     expect(human.knocked_out?).to be true
