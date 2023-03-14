@@ -18,7 +18,6 @@ RSpec.describe Iguana do
     iguana = Iguana.new
 
     iguana.colors = ["Green", "Red", "White"]
-
     expect(iguana.colors).to eq(["Green", "Red", "White"])
   end
 end
