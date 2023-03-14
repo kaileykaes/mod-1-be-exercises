@@ -143,7 +143,6 @@ RSpec.describe Direwolf do
     summer_wolf.protects(arya_stark)
     lady_wolf.protects(sansa_stark)
     summer_wolf.leaves(arya_stark)
-
     expected = lady_wolf.leaves(rickon_stark)
 
     expect(expected.name).to eq('Rickon')
