@@ -20,11 +20,7 @@ class Venue
   end
 
   def over_capacity?
-    if patrons.count > capacity
-      true
-    else
-      false
-    end
+    patrons.count > capacity
   end
 
   def kick_out
