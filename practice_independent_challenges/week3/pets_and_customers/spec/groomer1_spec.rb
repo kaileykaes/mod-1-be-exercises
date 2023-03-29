@@ -19,4 +19,9 @@ RSpec.describe Groomer do
   it 'starts with no customers' do 
     expect(@groomer.customers).to eq([])
   end
+
+  it 'can add customers' do 
+    @groomer.add_customer(@joel)
+    expect(@groomer.customers).to eq([@joel])
+  end
 end
