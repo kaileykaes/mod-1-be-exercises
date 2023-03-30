@@ -16,4 +16,11 @@ class Team
   def add_player(player)
     @players.push(player)
   end
+
+  def players_by_position(position)
+    position_players = @players.find_all do |player|
+      player.position == position
+    end
+    position_players
+  end
 end
