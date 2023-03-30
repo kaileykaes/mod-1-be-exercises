@@ -4,10 +4,22 @@ RSpec.describe WorldCup do
   before(:each) do
     @france = Team.new("France")
     @croatia = Team.new("Croatia")  
-    @mbappe = Player.new({name: "Kylian Mbappe", position: "forward"})
-    @pogba = Player.new({name: "Paul Pogba", position: "midfielder"})  
-    @modric = Player.new({name: "Luka Modric", position: "midfielder"})  
-    @vida = Player.new({name: "Domagoj Vida", position: "defender"}) 
+    @mbappe = Player.new({
+      name: "Kylian Mbappe", 
+      position: "forward"
+    })
+    @pogba = Player.new({
+      name: "Paul Pogba", 
+      position: "midfielder"
+    })  
+    @modric = Player.new({
+      name: "Luka Modric", 
+      position: "midfielder"
+    })  
+    @vida = Player.new({
+      name: "Domagoj Vida", 
+      position: "defender"
+    }) 
     @france.add_player(@mbappe)    
     @france.add_player(@pogba)    
     @croatia.add_player(@modric)    
@@ -28,5 +40,13 @@ RSpec.describe WorldCup do
     expect(@world_cup.active_players_by_position('midfielder')).to eq([@pogba, @modric])
     @croatia.eliminated = true
     expect(@world_cup.active_players_by_position('midfielder')).to eq([@pogba])
+  end
+
+  it '#all_players_by_position' do 
+    expect(@world_cup.all_players_by_position).to eq({
+      "forward" => [@mbappe], 
+      "midfielder" => [@pogba, @modric], 
+      "defender" => [@vida]
+    })
   end
 end
