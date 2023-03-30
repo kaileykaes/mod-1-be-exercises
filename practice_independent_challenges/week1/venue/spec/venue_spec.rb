@@ -61,6 +61,7 @@ describe Venue do
   
   describe '#kick_out' do 
     it 'kicks out patrons' do 
+      venue = Venue.new('Bluebird', 4)
       venue.add_patron('Mike')
       venue.add_patron('Megan')
       venue.add_patron('Bob')
