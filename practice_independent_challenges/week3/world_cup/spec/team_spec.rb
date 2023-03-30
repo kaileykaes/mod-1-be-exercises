@@ -33,7 +33,7 @@ RSpec.describe Team do
 
   it 'can add players' do 
     @team.add_player(@mbappe)
-    @team.add_player(pogba)
+    @team.add_player(@pogba)
     expect(@team.players).to eq([@mbappe, @pogba])
   end
 
