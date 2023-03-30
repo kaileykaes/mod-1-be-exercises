@@ -37,4 +37,9 @@ RSpec.describe Team do
     expect(@team.players).to eq([@mbappe, @pogba])
   end
 
+  it '#players_by_position' do 
+    @team.add_player(@mbappe)
+    @team.add_player(@pogba)
+    expect(@team.players_by_position("midfielder")).to eq([@pogba])
+  end
 end
