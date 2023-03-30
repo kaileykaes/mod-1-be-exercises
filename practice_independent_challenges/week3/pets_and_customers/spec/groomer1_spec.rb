@@ -73,4 +73,16 @@ RSpec.describe Groomer do
     expect(@groomer.count_pets_by_type(:bear)).to eq(1)
     expect(@groomer.count_pets_by_type(:cat)).to eq(3)
   end
+
+  it 'starts with no charges' do 
+    expect(@groomer.invoices).to eq([])
+  end
+
+  it '#invoice' do 
+    @groomer.invoice(@joel, 'nail trim', @lucy, 20)
+    expect(@groomer.invoices[0]).to be_a Charge
+    expect(@joel.outstanding_balance).to eq(20)
+    expect(@groomer.invoices[0].pet).to eq(@lucy)
+    expect(@groomer.invoices[0].service).to eq('nail trim')
+  end
 end

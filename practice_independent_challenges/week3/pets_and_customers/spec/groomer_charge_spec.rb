@@ -25,7 +25,7 @@ RSpec.describe Charge do
     expect(@charge_1).to be_a Charge
   end
 
-  it '#attributes' do 
+  it 'has attributes' do 
     expect(@charge_1.service).to eq('nail trim')
     expect(@charge_1.customer).to eq(@joel)
     expect(@charge_1.pet).to eq(@samson)
