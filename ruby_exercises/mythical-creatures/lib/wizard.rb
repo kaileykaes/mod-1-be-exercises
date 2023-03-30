@@ -10,11 +10,7 @@ class Wizard
   end  
 
   def bearded?
-    if bearded == true
-      true
-    else 
-      false
-    end
+    bearded == true
   end
 
   def incantation(spell)
@@ -27,10 +23,6 @@ class Wizard
   end
 
   def rested?
-   if @spell_count < 3
-    true
-   else 
-    false
-   end
+    @spell_count < 3
   end
 end

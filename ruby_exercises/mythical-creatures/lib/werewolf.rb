@@ -12,31 +12,15 @@ class Werewolf
   end
 
   def human?
-    if @humanness == true
-      true 
-    else 
-      false
-    end
+    @humanness
   end
 
   def wolf?
-    return true if @wolfiness == true
-    return false if @wolfiness == false
+    @wolfiness 
   end
 
   def change!
-    if 
-      @humanness == false
-      @humanness = true 
-    else 
-      @humanness = false
-    end
-    if 
-      @wolfiness == false
-      @wolfiness = true
-    else
-      @wolfiness = false
-    end 
+    @humanness == false ? @humanness = true : @humanness = false
+    @wolfiness == false ? @wolfiness = true : @wolfiness = false
   end
-
 end

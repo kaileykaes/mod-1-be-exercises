@@ -16,11 +16,7 @@ class Pirate
   end
 
   def cursed?
-    if @heinous_act >= 3
-      true 
-    else
-      false
-    end
+    @heinous_act >= 3
   end
 
   def rob_ship

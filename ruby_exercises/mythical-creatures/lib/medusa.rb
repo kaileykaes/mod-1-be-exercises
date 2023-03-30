@@ -8,7 +8,8 @@ class Medusa
   end  
 
   def stare(victim)
-    @statues << victim && victim.stone = true
+    victim.stone = true
+    @statues << victim 
     if @statues.count > 3
       @statues[0].stone = false
       @statues.shift

@@ -8,11 +8,7 @@ class Unicorn
   end  
 
   def silver? 
-    if color == 'silver' 
-      true
-    else
-      false
-    end
+    color == 'silver' 
   end
 
   def say(phrase)

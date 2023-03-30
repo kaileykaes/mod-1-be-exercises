@@ -7,10 +7,6 @@ class Person
   end
 
   def stoned?
-    if @stone 
-      true
-    else 
-      false
-    end
+    @stone 
   end
 end

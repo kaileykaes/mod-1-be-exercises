@@ -40,20 +40,11 @@ class Centaur
   end
 
   def standing? 
-    if @stands == true 
-      @lays = false
-      true 
-    else 
-      false
-    end
+    @stands == true 
   end
 
   def sleep
-    if @stands == true
-      'NO!'
-    else 
-      @crankiness = 0
-    end
+    @stands ? 'NO!' : @crankiness = 0
   end
   
   def lay_down
@@ -62,24 +53,18 @@ class Centaur
   end
 
   def laying? 
-    if @lays == true
-      true 
-    else 
-      false
-    end
+    @lays 
   end
 
   def stand_up
-    if @lays == true 
-      @lays = false & @stands = true
-    end
+    @lays ? @lays = false & @stands = true : @stands
   end
 
   def sleep_potion
     if @lays == true
       'NO!'
     elsif 
-      cranky? == true
+      cranky? 
       @crankiness = 0
     else 
       'HURCK! Blegh, ow...'

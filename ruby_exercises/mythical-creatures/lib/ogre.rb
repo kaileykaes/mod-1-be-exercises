@@ -14,16 +14,12 @@ class Ogre
   def encounter(human)
     human.encounter_counter += 1
     @encounter_counter += 1
-    if human.notices_ogre?
-      swing_at(human)
-    end
+    swing_at(human) if human.notices_ogre?
   end
 
   def swing_at(human)
     @swings += 1
-    if @swings % 2 == 0
-      human.bruise = true
-    end
+    human.bruise = true if @swings % 2 == 0
   end
 
   def apologize(human)
@@ -44,18 +40,10 @@ class Human
   end
 
   def notices_ogre?
-    if @encounter_counter % 3 == 0
-      true 
-    else
-      false
-    end
+    @encounter_counter % 3 == 0
   end
 
   def knocked_out?
-    if bruise == true
-      true
-    else
-      false
-    end
+    bruise == true
   end
 end

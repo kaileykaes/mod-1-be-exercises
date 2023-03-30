@@ -23,15 +23,11 @@ class Direwolf
   def leaves(stark)
     @starks_to_protect.delete(stark)
     stark.safety = false
-    return stark
+    stark
   end
   
   def hunts_white_walkers?
-    if @hunts == false
-      false 
-    else 
-      true
-    end
+    @hunts == true
   end
 end
 
@@ -47,8 +43,7 @@ class Stark
   end
 
   def safe?
-    return true if @safety == true
-    return false if @safety == false
+    @safety == true
   end
 
   def house_words

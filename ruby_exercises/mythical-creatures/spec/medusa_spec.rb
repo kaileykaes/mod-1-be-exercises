@@ -26,7 +26,6 @@ RSpec.describe Medusa do
   it 'turns a person to stone when staring at them' do
     medusa = Medusa.new('Cassiopeia')
     victim = Person.new('Perseus')
-    # require 'pry'; binding.pry
     expect(victim.stoned?).to be false
     medusa.stare(victim)
     expect(victim.stoned?).to be true
