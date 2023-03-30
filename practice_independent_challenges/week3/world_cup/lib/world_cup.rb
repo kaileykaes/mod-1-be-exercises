@@ -16,4 +16,12 @@ class WorldCup
       player.position == position
     end
   end
+
+  def all_players_by_position
+    all_players = Hash.new 
+    all_players['forward'] = @teams.map{ |team| team.players_by_position('forward')}.flatten!
+    all_players['midfielder'] = @teams.map{ |team| team.players_by_position('midfielder')}.flatten!
+    all_players['defender'] = @teams.map{ |team| team.players_by_position('defender')}.flatten!
+    all_players
+  end
 end
