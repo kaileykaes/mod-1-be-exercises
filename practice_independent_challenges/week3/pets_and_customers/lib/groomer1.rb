@@ -1,10 +1,12 @@
 class Groomer
   attr_reader :name, 
-              :customers
+              :customers, 
+              :invoices
   
   def initialize(name)
     @name = name
     @customers = []
+    @invoices = []
   end
 
   def add_customer(customer)
@@ -27,5 +29,15 @@ class Groomer
       pet.type == type
     end
     type_pets.length
+  end
+
+  def invoice(customer, service, pet, amount)
+    customer.charge(amount)
+    @invoices << Charge.new({
+      service: service, 
+      customer: customer, 
+      pet: pet, 
+      amount: amount
+    })
   end
 end
