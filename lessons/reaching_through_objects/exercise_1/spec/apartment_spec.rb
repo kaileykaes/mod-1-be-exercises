@@ -27,4 +27,12 @@ RSpec.describe Apartment do
     @apartment.add_room(Room.new("bedroom"))
     expect(@apartment.rooms).to_not be_empty
   end
+
+  it 'can list rooms alphabetically' do 
+    @apartment.add_room(@bathroom)
+    @apartment.add_room(Room.new("laundry"))
+    @apartment.add_room(Room.new("kitchen"))
+    @apartment.add_room(Room.new("bedroom"))
+    expect(@apartment.list_rooms_by_name_alphabetically).to eq(["bathroom", "bedroom", "kitchen", "laundry"])
+  end
 end
