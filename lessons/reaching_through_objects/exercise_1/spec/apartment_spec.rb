@@ -3,6 +3,7 @@ require 'spec_helper'
 RSpec.describe Apartment do
   before(:each) do
     @apartment = Apartment.new
+    @bathroom = Room.new('bathroom')
   end
 
   it 'exists' do
@@ -15,4 +16,15 @@ RSpec.describe Apartment do
     expect(@apartment.is_rented?).to be true
   end
 
+  it 'starts with no rooms' do 
+    expect(@apartment.rooms).to eq([])
+  end
+
+  it 'can add rooms' do 
+    @apartment.add_room(@bathroom)
+    @apartment.add_room(Room.new("laundry"))
+    @apartment.add_room(Room.new("kitchen"))
+    @apartment.add_room(Room.new("bedroom"))
+    expect(@apartment.rooms).to_not be_empty
+  end
 end
