@@ -1,4 +1,4 @@
-class Employee
+class Employee 
   attr_reader :name, :id
 
   def initialize(name, id)

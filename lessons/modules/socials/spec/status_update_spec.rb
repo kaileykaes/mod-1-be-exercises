@@ -1,4 +1,5 @@
 require './lib/status_update'
+require './lib/commentable'
 
 RSpec.describe StatusUpdate do
   before :each do

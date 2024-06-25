@@ -21,7 +21,7 @@ class Veterinarian
     sorted_pets.reverse
   end
 
-  def count_pets(customer)
-    customer.pets.length
+ def count_pets(customer)
+    c ustomer.pets.length
   end
 end

@@ -1,4 +1,5 @@
 require './lib/photo'
+require './lib/commentable'
 
 RSpec.describe Photo do
   before :each do

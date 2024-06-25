@@ -38,3 +38,13 @@ cities_lived_in = {
 #     "Columbus => 1,
 #     "Austin" => 1
 # }
+
+cities_by_peeps = Hash.new(0)
+
+city_collection =  cities_lived_in.values.flatten.uniq 
+p city_collection
+
+city_collection.each do |city|
+  cities_by_peeps[city]
+  cities_lived_in.each |human, cities|  
+end

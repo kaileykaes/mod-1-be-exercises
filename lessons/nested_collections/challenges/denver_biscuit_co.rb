@@ -1,5 +1,6 @@
 # Challenge 1:
 # Return the name ("Denver Biscuit")
+p denver_biscuit_co[:name]
 # Return the rating (4.5)
 # Return a list of accepted transactions (["pickup", "delivery"])
 # Return the first listed category title ("Sandwiches")

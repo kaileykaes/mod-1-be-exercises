@@ -1,4 +1,6 @@
-class Ceo
+require 'employee'
+
+class Ceo < Employee
 
   attr_reader :base_salary,
               :bonus
